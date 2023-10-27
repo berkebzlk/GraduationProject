@@ -1,0 +1,2 @@
+- Login, Register
+- Otel sayfasına gelen yorumlara yanıt yazabilme

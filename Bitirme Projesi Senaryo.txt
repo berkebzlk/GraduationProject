@@ -1,0 +1,14 @@
+- Güvenlik olarak JWT kullanılacak
+- Giriş yapıldığında bir JWT Token verilecek ve yapılacak her işlem için bu token kullanılacak.
+
+
+-- Entity
+- User
+- Comment (User)
+- Category
+- Images (Category)
+
+-- Payload
+- UserDto
+- CommentDto
+
