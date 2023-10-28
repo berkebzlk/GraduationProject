@@ -7,9 +7,9 @@
 ## Hotel Controller
 - [x] Create Hotel
 - [x] Get Hotel
-- [ ] Get All Hotels
-- [ ] Update Hotel
-- [ ] Delete Hotel
+- [x] Get All Hotels
+- [x] Update Hotel
+- [x] Delete Hotel
 
 ## Review Controller
 - [ ] Create Review
