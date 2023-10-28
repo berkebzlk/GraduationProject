@@ -6,7 +6,7 @@
 
 ## Hotel Controller
 - [x] Create Hotel
-- [ ] Get Hotel
+- [x] Get Hotel
 - [ ] Get All Hotels
 - [ ] Update Hotel
 - [ ] Delete Hotel
