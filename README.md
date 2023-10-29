@@ -12,11 +12,11 @@
 - [x] Delete Hotel
 
 ## Review Controller
-- [ ] Create Review
-- [ ] Get Reviews By Hotel
-- [ ] Update Review
+- [x] Create Review
+- [x] Get Reviews By Hotel
+- [x] Update Review
 - [ ] Get Reviews By User
-- [ ] Delete Review
+- [x] Delete Review
 
 ## Response Controller
 - [ ] Create Response

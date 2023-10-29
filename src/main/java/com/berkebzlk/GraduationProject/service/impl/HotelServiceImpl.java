@@ -27,15 +27,13 @@ import java.util.stream.Collectors;
 @Service
 public class HotelServiceImpl implements HotelService {
 
-    JwtTokenProvider jwtTokenProvider;
     ModelMapper modelMapper;
     HotelRepository hotelRepository;
     UserRepository userRepository;
     RoleRepository roleRepository;
     PersonelRepository personelRepository;
 
-    public HotelServiceImpl(JwtTokenProvider jwtTokenProvider, ModelMapper modelMapper, HotelRepository hotelRepository, UserRepository userRepository, RoleRepository roleRepository, PersonelRepository personelRepository) {
-        this.jwtTokenProvider = jwtTokenProvider;
+    public HotelServiceImpl(ModelMapper modelMapper, HotelRepository hotelRepository, UserRepository userRepository, RoleRepository roleRepository, PersonelRepository personelRepository) {
         this.modelMapper = modelMapper;
         this.hotelRepository = hotelRepository;
         this.userRepository = userRepository;
