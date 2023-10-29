@@ -12,3 +12,15 @@
 - UserDto
 - CommentDto
 
+GÖREVLER
+[x] Hotel silme ve güncellemede sadece ROLE_HOTEL_ADMIN yetkisine sahip kullanıcılar işlem yapabilecek
+Buradaki trick başka otel sahipleri de bu yetkiye sahip. Dolayısıyla hem role yetkisine bakacağım hem de
+bu hotel personeli mi diye bakacağım.
+
+EKLENECEK ÖZELLİKLER
+(GEREK KALMADI İHTİYAR. DATABASE YAPISINI DEĞİŞTİRDİM.)
+[ ] Hotel silindiğinde ara tablolardan bağlantılı olanlar siliniyor. Ama users_roles üzerinden silme işlemini
+yapmadım. Bu işlemi yap. Problem: Eğer kullanıcın ROLE_HOTEL_ADMIN yetkisi hotel silindiği için giderse
+kişinin başka otel adminliği varsa onlarda gidecek. Başka otellerde adminliği var mı kontrolü yapmam lazım.
+
+
