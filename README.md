@@ -19,16 +19,17 @@
 - [x] Delete Review
 
 ## Response Controller
-- [ ] Create Response
-- [ ] Get Response
-- [ ] Update Response
+- [x] Create Response
+- [x] Get Responses By Review
+- [x] Get Response
+- [x] Update Response
 - [ ] Get Response By User
-- [ ] Delete Response
+- [x] Delete Response
 
 ## Role Controller
-- [ ] Create Role
-- [ ] Add Role to User
-- [ ] Get All Roles
-- [ ] Get Role By User
-- [ ] Update Role
-- [ ] Delete Role
+- [ ] Create Role (SUPER_ADMIN)
+- [ ] Add Role to User (HOTEL_ADMIN)
+- [ ] Get All Roles (SUPER_ADMIN)
+- [ ] Get Role By User 
+- [ ] Update Role (SUPER_ADMIN)
+- [ ] Delete Role (SUPER_ADMIN)
