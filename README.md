@@ -33,3 +33,7 @@
 - [ ] Get Role By User 
 - [ ] Update Role (SUPER_ADMIN)
 - [ ] Delete Role (SUPER_ADMIN)
+
+## Personel Controller
+[x] Add Personel
+[x] Delete Personel
