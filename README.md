@@ -23,7 +23,7 @@
 - [x] Get Responses By Review
 - [x] Get Response
 - [x] Update Response
-- [ ] Get Response By User
+- [x] Get Response By User
 - [x] Delete Response
 
 ## Role Controller
