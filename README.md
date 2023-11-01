@@ -35,5 +35,5 @@
 - [ ] Delete Role (SUPER_ADMIN)
 
 ## Personel Controller
-[x] Add Personel
-[x] Delete Personel
+- [x] Add Personel
+- [x] Delete Personel
