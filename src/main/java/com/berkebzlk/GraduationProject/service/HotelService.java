@@ -15,5 +15,5 @@ public interface HotelService {
 
     String deleteHotel(long hotelId);
 
-    void checkIfUserIsHotetAdmin(long userId, long hotelId);
+    void checkIfUserIsHotelAdmin(long userId, long hotelId);
 }

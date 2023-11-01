@@ -27,7 +27,7 @@
 - [x] Delete Response
 
 ## Role Controller
-- [ ] Create Role (SUPER_ADMIN)
+- [x] Create Role (SUPER_ADMIN)
 - [ ] Add Role to User (HOTEL_ADMIN)
 - [ ] Get All Roles (SUPER_ADMIN)
 - [ ] Get Role By User 

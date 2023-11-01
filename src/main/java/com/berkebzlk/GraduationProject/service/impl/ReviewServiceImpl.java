@@ -11,6 +11,7 @@ import com.berkebzlk.GraduationProject.repository.ReviewRepository;
 import com.berkebzlk.GraduationProject.repository.UserRepository;
 import com.berkebzlk.GraduationProject.service.ReviewService;
 import org.modelmapper.ModelMapper;
+import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
@@ -95,6 +96,8 @@ public class ReviewServiceImpl implements ReviewService {
         Review review = reviewRepository.findById(reviewId)
                 .orElseThrow(() -> new ResourceNotFoundException("Review", "id", reviewId));
 
+        checkIfRequestUserOwnsReview(review, "You have no access to update this review!");
+
         review.setContent(reviewDto.getContent());
 
         Review updatedReview = reviewRepository.save(review);
@@ -116,8 +119,17 @@ public class ReviewServiceImpl implements ReviewService {
         Review review = reviewRepository.findById(reviewId)
                 .orElseThrow(() -> new ResourceNotFoundException("Review", "id", reviewId));
 
+        checkIfRequestUserOwnsReview(review, "You have no access to delete this review!");
+
         reviewRepository.delete(review);
 
         return "Review successfully deleted!";
+    }
+
+    private void checkIfRequestUserOwnsReview(Review review, String message) {
+        User user = getUserFromSecurityContext();
+        if (user.getId() != review.getUser().getId()) {
+            throw new AccessDeniedException(message);
+        }
     }
 }

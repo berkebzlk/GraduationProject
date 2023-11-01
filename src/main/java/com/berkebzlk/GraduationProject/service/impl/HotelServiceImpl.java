@@ -89,7 +89,7 @@ public class HotelServiceImpl implements HotelService {
     public HotelDto updateHotel(HotelDto hotelDto, long hotelId) {
 
         User user = getUserFromSecurityContext();
-        checkIfUserIsHotetAdmin(user.getId(), hotelId);
+        checkIfUserIsHotelAdmin(user.getId(), hotelId);
 
         Hotel hotel = hotelRepository.findById(hotelId)
                 .orElseThrow(() -> new ResourceNotFoundException("Hotel", "id", hotelId));
@@ -105,7 +105,7 @@ public class HotelServiceImpl implements HotelService {
     public String deleteHotel(long hotelId) {
 
         User user = getUserFromSecurityContext();
-        checkIfUserIsHotetAdmin(user.getId(), hotelId);
+        checkIfUserIsHotelAdmin(user.getId(), hotelId);
 
         hotelRepository.deleteById(hotelId);
 
@@ -113,7 +113,7 @@ public class HotelServiceImpl implements HotelService {
     }
 
     @Override
-    public void checkIfUserIsHotetAdmin(long userId, long hotelId) {
+    public void checkIfUserIsHotelAdmin(long userId, long hotelId) {
 
         Role hotelAdminRole = roleRepository.findByName("ROLE_HOTEL_ADMIN").get();
 

@@ -10,6 +10,7 @@ import com.berkebzlk.GraduationProject.repository.ReviewRepository;
 import com.berkebzlk.GraduationProject.repository.UserRepository;
 import com.berkebzlk.GraduationProject.service.ResponseService;
 import org.modelmapper.ModelMapper;
+import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
@@ -83,6 +84,9 @@ public class ResponseServiceImpl implements ResponseService {
 
         Response response = responseRepository.findById(responseId)
                 .orElseThrow(() -> new ResourceNotFoundException("Response", "id", responseId));
+
+        checkIfRequestUserOwnsResponse(response, "You have no access to change this response!");
+
         response.setContent(responseDto.getContent());
 
         Response savedResponse = responseRepository.save(response);
@@ -95,6 +99,8 @@ public class ResponseServiceImpl implements ResponseService {
 
         Response response = responseRepository.findById(responseId)
                 .orElseThrow(() -> new ResourceNotFoundException("Response", "id", responseId));
+
+        checkIfRequestUserOwnsResponse(response, "You have no access to delete this response!");
 
         responseRepository.delete(response);
 
@@ -110,5 +116,12 @@ public class ResponseServiceImpl implements ResponseService {
                 .stream()
                 .map(response -> modelMapper.map(response, ResponseDto.class))
                 .collect(Collectors.toList());
+    }
+
+    private void checkIfRequestUserOwnsResponse(Response response, String message) {
+        User user = getUserFromSecurityContext();
+        if (user.getId() != response.getUser().getId()) {
+            throw new AccessDeniedException(message);
+        }
     }
 }
